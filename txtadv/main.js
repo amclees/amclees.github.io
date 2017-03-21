@@ -182,15 +182,17 @@ $(document).ready(function() {
     display();
     getChoice(this, "Would you like to play in death wish mode? (Recommended for experienced players)"
     , function(hardmode) {
-      var dmg = Dice.dx(8, 6);
-      player.takeDamage(dmg, "lightning");
-      player.ac = -20;
-      player.attack = -5;
-      player.damageRoll = function() { return 1; };
-      player.damage = "Always 1";
-      player.name = "Someone who underestimated hardmode";
-      message(this, "Lighning instantly strikes you. You develop a severe headache and arthritis. You feel greatly fatigued. One of your arms falls off.");
-    })
+      if(hardmode) {
+        var dmg = Dice.dx(8, 6);
+        player.takeDamage(dmg, "lightning");
+        player.ac = -20;
+        player.attack = -5;
+        player.damageRoll = function() { return 1; };
+        player.damage = "Always 1";
+        player.name = "Someone who underestimated hardmode";
+        message(this, "Lighning instantly strikes you. You develop a severe headache and arthritis. You feel greatly fatigued. One of your arms falls off.");
+      }
+    });
   });
 
 
@@ -823,10 +825,45 @@ $(document).ready(function() {
 
     var rewards = [
       function(callback) {
-        var gemTypes = [ "Ruby", "Sapphire", "Diamond", "Topaz", "Opal", "Emerald", "Cryolite", "Azurite", "Slice of Cheese" ];
+        var gemTypes = [ "Ruby", "Sapphire", "Diamond", "Topaz", "Opal", "Emerald", "Cryolite", "Azurite", "Slice of Cheese", "Chaos Emerald", "Rose Quartz" ];
         message(this, "You discover a chest filled with a gem. You take the gem with you.");
         player.inventory.push(gemTypes[Math.floor(Math.random() * gemTypes.length)]);
         callback();
+      },
+      function(callback) {
+        message(this, "After you kill the last monster, you discover a small pebble.");
+        player.inventory.push("Mysterious Pebble");
+        callback();
+      },
+      function(callback) {
+        message(this, "You discover a map of the world.");
+        player.inventory.push("Map of the World");
+        for(var i = 0; i < map.length; i++) {
+          for(var j = 0; j < map[i].length; j++) {
+            map[i][j].explored = true;
+          }
+        }
+        display();
+        callback();
+      },
+      function(callback) {
+        message(this, "You see a lever in front of you. There is a note next to it that says it will display the real rules binding this world. Would you like to pull it?"
+        , function(pullLever) {
+          if(pullLever) {
+            player.inventory.push("<strong>True Rulebook</strong><br /><code>"
+            + round
+            + "</code><br /><code>"
+            + JSON.stringify(player)
+            + "</code><br /><code>"
+            + effects
+            + "</code>");
+            message(this, "You have discovered the True Rulebook.", function() {
+              callback();
+            });
+          } else {
+            callback();
+          }
+        });
       }
     ];
 
@@ -1223,4 +1260,10 @@ $(document).ready(function() {
 
   }
 
+  window.cheat = function() {
+    player.ac = Infinity;
+    player.damageRoll = function() { return Infinity };
+    player.attackRoll = function() { return Infinity };
+    display();
+  }
 });

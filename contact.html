@@ -1,0 +1,25 @@
+---
+title: Contact
+layout: default
+permalink: /contact
+---
+<p>You can find me on GitHub as <a href="https://github.com/amclees">amclees</a>.</p>
+<p>My email is <span id="email-field" class="email-field">my first name, followed by my last name, followed by the digit 5, at gmail.com.</span>
+
+<script>
+(function() {
+  var emailField = document.getElementById('email-field');
+  var x = 15515741;
+  var k = 2042029183;
+  for (var i = 0; i < 578058; i++) {
+    x = (x * k) % 173;
+  }
+  setTimeout(function() {
+    emailField.style.opacity = 0;
+    setTimeout(function() {
+      emailField.style.opacity = 1;
+      emailField.innerHTML = 'andrewmclees' + x + '@gmail.com';
+    }, 1000);
+  }, 1000);
+})();
+</script>

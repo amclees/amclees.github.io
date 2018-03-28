@@ -1,0 +1,6 @@
+name: Andrew McLees
+permalink: /:categories/:title/
+timezone: America/Los_Angeles
+# Emulates GitHub pages setting
+safe: true
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="author" content="{{ page.author }}" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    {% include header.html %}
+    <main>
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
+    {% include footer.html %}
+</html>

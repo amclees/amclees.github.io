@@ -4,4 +4,11 @@ permalink: /blog
 template: default
 title: Blog
 ---
-<p>Post list</p>
+<p>Posts</p>
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

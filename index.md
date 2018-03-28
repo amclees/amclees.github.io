@@ -2,5 +2,6 @@
 layout: default
 title: Andrew McLees
 ---
-Welcome
+
+Welcome to my (relatively) new blog. Here I write about software-related things.
 

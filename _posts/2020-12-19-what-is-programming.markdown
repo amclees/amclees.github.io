@@ -277,7 +277,7 @@ Now that we've run the program, you've probably realized a few things:
 * It would be really hard to make computers do anything complicated with a program like this.
 
 The program above is a very low-level program. It can be converted into numbers, stored in memory (yes, programs
-go the same memory too, usually),
+go in the same memory too, usually),
 and interpreted directly by the electronic circuits in your processor.
 Some computers have separate memory for all their programs, but they are the exception.
 If the program is in memory, the program can read and write to itself.
@@ -288,7 +288,7 @@ We have to start somewhere, but it's disappointing to see so many steps involved
 program. It's also a very complicated way of saying we should multiply a couple numbers and add
 a couple numbers. On the bright side, a modern computer can execute this program millions of times
 every second. A single computer could swiftly and accurately handle all the sales tax calculations
-in the world, so long as all the data was delivered to and from it's memory. That's the hard part,
+in the world, so long as all the data was delivered to and from its memory. That's the hard part,
 and one way of viewing the internet.
 
 To simplify the process of writing a program, programmers usually use a higher-level programming language.
@@ -341,7 +341,7 @@ Not knowing Ruby syntax, you may still be able to find them for two reasons:
 
 2. Programming languages tend to be more orderly than natural language, so irregularities are often wrong.
 
-Syntax errors are most programmer's favorite kind of errors because they are easy to spot and fix.
+Syntax errors are most programmers' favorite kind of errors because they are easy to spot and fix.
 Errors from bad assumptions or bad interaction with other programmers' code are much more difficult to deal
 with.
 
@@ -465,7 +465,7 @@ end
 
 This is for something as simple as calculating sales tax. Not all the lines are that interesting, and lines of code is an imperfect metric.
 But consider that Windows XP had 50 million lines of code to give a rough idea of the complexity that exists.
-Any typo in all 50 million lines could produce a bug, but, more importantly, different programmers could have different ideas about
+Any typo in any of 50 million lines could produce a bug, but, more importantly, different programmers could have different ideas about
 the problem. What should a negative sales tax rate do? The code above would grant a discount to the customer, which is almost
 certainly a bug. It would be better not to give a result at all.
 
@@ -523,7 +523,7 @@ Number Find(Text corpus, Text word) {
 ```
 
 This program returns 42 regardless of the inputs. This is terrible! The inputs and ouputs all have the right data types
-(text inputs, and a number output), but the behavior is not right in any reasonable interpretation.
+(text inputs, and a number output), but the behavior is not right by any reasonable interpretation.
 This is what is meant by behavior (or 'conventions') in an interface.
 
 It's common to call an interface an API. Programmers like acronyms. It stands for Application Programmable Interface.

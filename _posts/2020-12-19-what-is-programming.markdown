@@ -30,7 +30,7 @@ according to a set of instructions on a punched card. There were also theories o
 A working version was not built, however.
 
 In the early 1900s, a spur of innovations in theories of computing and electrical engineering laid the foundations for a digital computer.
-The first programmable digital computers were developed for military applications (artillery, codebreaking, nuclear weapons, and the likE).
+The first programmable digital computers were developed for military applications (artillery, codebreaking, nuclear weapons, and the like).
 There is a great deal of history in this area, but it's far more than what is needed to understand what a computer is.
 
 There are a few things that distinguished these computers from there predecessors:
